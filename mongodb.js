@@ -1,17 +1,8 @@
 // CRUD create read update delete 3.1.10
-
-// const mongodb = require("mongodb");
-// const MongoClient = mongodb.MongoClient;
-// const ObjectID = mongodb.ObjectID;
-
 const { MongoClient, ObjectID } = require("mongodb");
 
 const connectionURL = "mongodb://127.0.0.1:27017";
 const databaseName = "task-manager";
-
-const id = new ObjectID();
-console.log(id.id.length);
-console.log(id.toHexString().length);
 
 MongoClient.connect(
   connectionURL,
@@ -23,62 +14,40 @@ MongoClient.connect(
 
     const db = client.db(databaseName);
 
-    // db.collection("users").insertOne(
-    //   {
-    //     name: "Vikram",
-    //     age: 26,
-    //   },
-    //   (error, result) => {
-    //     if (error) {
-    //       return console.log("Unable to insert user.");
-    //     }
+    // db.collection("users")
+    //   .updateOne({ _id: new ObjectID("6132afdcfd093e8f7bba882d") }, { $inc: { age: 1 } })
+    //   .then(result => {
+    //     console.log(result);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
 
-    //     console.log(result.ops);
-    //   }
-    // );
+    // db.collection("tasks")
+    //   .updateMany({ completed: false }, { $set: { completed: true } })
+    //   .then(result => {
+    //     console.log(result);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
 
-    // db.collection("users").insertMany(
-    //   [
-    //     {
-    //       user: "Jen",
-    //       age: 28,
-    //     },
-    //     {
-    //       name: "Gunther",
-    //       age: 27,
-    //     },
-    //   ],
-    //   (error, result) => {
-    //     if (error) {
-    //       return console.log("Unable to insert documents.");
-    //     }
+    // db.collection("users")
+    //   .deleteMany({ age: 32 })
+    //   .then(result => {
+    //     console.log(result);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
 
-    //     console.log(result.ops);
-    //   }
-    // );
-
-    // db.collection("tasks").insertMany(
-    //   [
-    //     {
-    //       description: "Task description 1",
-    //       completed: false,
-    //     },
-    //     {
-    //       description: "Task description 2",
-    //       completed: true,
-    //     },
-    //     {
-    //       description: "Task description 3",
-    //       completed: false,
-    //     },
-    //   ],
-    //   (error, response) => {
-    //     if (error) {
-    //       return console.log("Unable to insert tasks.");
-    //     }
-
-    //     console.log(response.ops);
-    //   }
-    // );
+    // db.collection("tasks")
+    //   .deleteOne({ _id: new ObjectID("6132ba9f37df070ce80fffbb") })
+    //   .then(result => {
+    //     console.log(result);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
   }
 );
