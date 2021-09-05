@@ -11,9 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "mongodb": "^3.7.0",
-    "mongoose": "^5.13.8"
+    "mongoose": "^5.13.8",
+    "validator": "^13.6.0"
   },
   "devDependencies": {
-    "@types/mongodb": "^3.6.20"
+    "@types/mongodb": "^3.6.20",
+    "nodemon": "^2.0.12"
   }
 }
