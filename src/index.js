@@ -29,10 +29,8 @@ app.get("/users", async (req, res) => {
 });
 
 app.get("/users/:id", async (req, res) => {
-  const _id = req.params.id;
-
   try {
-    const user = await User.findById(_id);
+    const user = await User.findById(req.params.id);
 
     if (!user) {
       return res.status(404).send();
@@ -91,10 +89,8 @@ app.get("/tasks", async (req, res) => {
 });
 
 app.get("/tasks/:id", async (req, res) => {
-  const _id = req.params.id;
-
   try {
-    const task = await Task.findById(_id);
+    const task = await Task.findById(req.params.id);
 
     if (!task) {
       return res.status(404).send();
