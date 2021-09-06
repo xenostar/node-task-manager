@@ -42,8 +42,8 @@ app.get("/users/:id", (req, res) => {
 
       res.send(user);
     })
-    .catch(() => {
-      res.status(500).send();
+    .catch(error => {
+      res.status(500).send(error);
     });
 });
 
@@ -55,8 +55,8 @@ app.post("/tasks", (req, res) => {
     .then(() => {
       res.status(201).send(task);
     })
-    .catch(() => {
-      res.status(400).send();
+    .catch(error => {
+      res.status(400).send(error);
     });
 });
 
@@ -81,8 +81,8 @@ app.get("/tasks/:id", (req, res) => {
 
       res.send(task);
     })
-    .catch(() => {
-      res.status(500).send();
+    .catch(error => {
+      res.status(500).send(error);
     });
 });
 
