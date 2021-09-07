@@ -30,3 +30,18 @@ app.listen(port, () => {
   console.log(`Server is up on port ${port}.`);
   console.log(`Launch the app at: http://localhost:${port}`);
 });
+
+// const Task = require("./models/task");
+// const User = require("./models/user");
+
+// const main = async () => {
+//   // const task = await Task.findById("6136cf8609330c21321aeafa");
+//   // await task.populate("owner").execPopulate();
+//   // console.log(task.owner);
+
+//   const user = await User.findById("6136ceb5f4933a205734ff75");
+//   await user.populate("tasks").execPopulate();
+//   console.log(user.tasks);
+// };
+
+// main();
