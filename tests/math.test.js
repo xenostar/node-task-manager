@@ -20,11 +20,11 @@ test('Should convert 0 C to 32 F', () => {
 	expect(total).toBe(32);
 });
 
-// test("Async test demo", done => {
-//   setTimeout(() => {
-//     expect(1).toBe(2);
-//     done();
-//   }, 2000);
+// test('Async setTimeout demo', done => {
+// 	setTimeout(() => {
+// 		expect(1).toBe(2);
+// 		done();
+// 	}, 2000);
 // });
 
 test('Should add two numbers', done => {
