@@ -16,8 +16,14 @@ test('Should create task for user', async () => {
 
 	const task = await Task.findById(response.body._id);
 	expect(task).not.toBeNull();
+	expect(task.completed).toEqual(false);
 });
 
-// test('Should create task for user', async () => {
-// 	expect(1).toBe(1);
-// });
+test('Should fetch user tasks', async () => {
+	const response = await request(app)
+		.get('/tasks')
+		.set('Authorization', `Bearer ${userOne.tokens[0].token}`)
+		.expect(200);
+
+	expect(response.body.length).toEqual(2);
+});
